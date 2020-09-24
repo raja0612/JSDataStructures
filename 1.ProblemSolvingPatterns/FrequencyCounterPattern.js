@@ -1,6 +1,10 @@
 /*
+This pattern uses objects/sets to collect values / frequencies of values.
 
-Write a function to check if first array elements in second array with sqaured value
+This can avoid nested loops and O(N^2) operations with arrays and strings.
+
+Write a function to check if first array elements in second 
+array with sqaured value
 
 [1, 2, 3] [4, 1, 9] // true
 */
