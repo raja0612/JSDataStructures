@@ -197,3 +197,15 @@ console.log(list.print());
 console.log("***********AFTER REVERSE ******************");
 console.log(list.reverse());
 console.log(list.print());
+
+
+/*
+  Insertion  - O(1)
+  Removal - It depends -- O(1) or O(N)
+  Searching  - O(N)
+  Access - O(N)
+
+  If you dont need random access , linked list might be the option.
+
+
+*/
