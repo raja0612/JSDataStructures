@@ -88,6 +88,7 @@ class DoublyLinkedList {
         let current, counter;
         if(index <= this.length / 2) {
             console.log("SEACRCHING FROM START");
+            current = this.head;
             counter = 0;
             while(counter !== index){
               current = current.next;
@@ -96,15 +97,16 @@ class DoublyLinkedList {
         } else {
              console.log("SEACRCHING FROM END")
              counter = this.length - 1;
+             current = this.tail;
              while(counter !== index){
-              currentTail = current.prev;
+              current = current.prev;
               counter--;
             }
         }
         return current;
     }
 
-    set(inex, val) {
+    set(index, val) {
        let foundNode = get(index);
        if(foundNode) {
          foundNode.val = val;
@@ -112,13 +114,72 @@ class DoublyLinkedList {
        }
        return false;
     }
+
+    insert(index, val) {
+        if(index < 0 || index > this.length) return undefined;
+        if(index === 0) return this.unshift(val);
+        if(index === this.length - 1) return this.push(val);
+
+        let beforeNode = this.get(index - 1);
+        let afterNode = beforeNode.next;
+
+        let newNode = new Node(val);
+        beforeNode.next = newNode;
+        newNode.prev = beforeNode;
+        newNode.next = afterNode;
+        afterNode.prev = newNode;
+        this.length++;
+        return this;
+    }
+
+    remove(index) {
+        if(index < 0 || index >= this.length) return undefined;
+        if(index === 0) return this.shift();
+        if(index === this.length - 1) return this.pop();
+
+        let removedNode = this.get(index);
+        let beforeNode = removedNode.prev;
+        let afterNode = removedNode.next;
+
+        beforeNode.next = afterNode;
+        afterNode.prev = beforeNode;
+        removedNode.prev = null;
+        removedNode.next = null;
+        this.length--;
+
+        return removedNode;
+   
+        }
+
+    print() {
+        let current = this.head;
+        let arr = [];
+        for(let i = 0; i < this.length; i++) {
+            arr.push(current.val);
+            current = current.next;
+        }
+        return arr;
+    }
 }
 let list = new DoublyLinkedList();
 list.push(1);
 list.push(2);
 list.push(3);
-console.log('**********AFTER PUSH**********');
-console.log(list);
-list.pop();
-console.log('**********AFTER POP**********');
-console.log(list);
+list.push(4);
+list.push(5);
+list.push(6);
+list.insert(0, 7);
+list.insert(6, 8);
+list.remove(6);
+console.log(list.print());
+
+
+/*
+ Big O of Doubly Linked Lists
+ Insertion = O(1);
+ Removal = O(1);
+ Searching = O(N);
+ Access  - O(N)
+
+
+*/
