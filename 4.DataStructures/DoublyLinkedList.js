@@ -150,7 +150,24 @@ class DoublyLinkedList {
         return removedNode;
    
         }
+        reverse() {
 
+            let current = this.head;
+            let temp;
+
+            while(current != null) {
+                let temp = current.prev;
+                current.prev = current.next;
+                current.next = temp;
+                current = current.prev;
+            }
+            /* Before changing head, check for the cases like
+         empty list and list with only one node */
+            if (temp != null) {
+                this.head = temp.prev;
+            }
+            return this;
+        }
     print() {
         let current = this.head;
         let arr = [];
@@ -171,6 +188,7 @@ list.push(6);
 list.insert(0, 7);
 list.insert(6, 8);
 list.remove(6);
+//list.reverse();
 console.log(list.print());
 
 
