@@ -66,6 +66,21 @@ class BST  {
             }
         }
     }
+
+    BFS() {
+        var node = this.root;
+        var data = [];
+        var queue = [];
+        queue.push(node); // push root node first
+
+        while(queue.length) {
+            node = queue.shift(); // take element from begining;
+            data.push(node.value);
+            if(node.left)  queue.push(node.left);
+            if(node.right)  queue.push(node.right);
+        }
+        return data;
+    }
 }
 
 
@@ -79,4 +94,6 @@ tree.insert(11);
 tree.insert(16);
 tree.insert(7);
 
-console.log(tree)
+//console.log(tree)
+
+console.log(tree.BFS())
