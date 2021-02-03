@@ -69,17 +69,17 @@ class BST  {
 
     BFS() {
         var node = this.root;
-        var data = [];
+        var visited = [];
         var queue = [];
         queue.push(node); // push root node first
 
-        while(queue.length) {
+        while(queue.length) { // until queue is empty
             node = queue.shift(); // take element from begining;
-            data.push(node.value);
-            if(node.left)  queue.push(node.left);
-            if(node.right)  queue.push(node.right);
+            visited.push(node.value); // add it result array
+            if(node.left)  queue.push(node.left); // add left node to queue if exist
+            if(node.right)  queue.push(node.right); // add right node to queue if exist
         }
-        return data;
+        return visited;
     }
 }
 
