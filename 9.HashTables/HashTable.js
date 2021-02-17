@@ -91,6 +91,8 @@ class HashTable {
       }
       return total;
     }
+
+    //not handling setting duplicate keys in below method.
     set(key,value){
       let index = this._hash(key);
       if(!this.keyMap[index]){
@@ -163,4 +165,18 @@ class HashTable {
 
   console.log("VALUES")
   console.log(JSON.stringify(ht.values()))
+
+
+  /*
+
+  BIG O of Hash Tables
+
+  average case
+
+    Insertion: O(1)
+    Deletion: O(1)
+    Access: O(1)
+
+    
+  */
   
