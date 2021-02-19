@@ -32,6 +32,14 @@ class Graph {
          //remove vertex key from adjancency list
         delete this.adjancyList[vertex];
     }
+
+    dfs() {
+
+    }
+
+    bfs() {
+        
+    }
 }
 
 let g = new Graph();
