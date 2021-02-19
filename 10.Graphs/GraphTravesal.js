@@ -146,5 +146,5 @@ console.log("**********DFS Iterative************")
 console.log(g.DFSIterative("A"));
 
 
-console.log("**********DFS Iterative************")
+console.log("**********BFS Iterative************")
 console.log(g.BFSIterative("A"));
