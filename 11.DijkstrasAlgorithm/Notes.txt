@@ -1,0 +1,13 @@
+One of the most famous and widely used algorithms around.
+
+Find the shortest path between two vertices on a graph.
+
+what is the fastest way to go from one vertex to other vertex.
+
+
+Why is it useful?
+
+GPS - finds fastest route
+N/w routing - finds open shortest path for data
+Biology - used to Model the spread of viruses of humans
+Airline tickets - finds cheapest route to your destination.
