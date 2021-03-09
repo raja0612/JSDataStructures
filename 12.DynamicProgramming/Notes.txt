@@ -1,0 +1,17 @@
+A method of solving a complex problem by breaking it down into a collection of simpler subproblems
+, solving each of those subproblems just once, and storing thier solutions.
+
+It only works on problems with
+Overlapping subproblem and Optimal substructure.
+
+Overlapping subproblem : A problem is said to have overlapping subproblem if it can be broken down into subproblems
+which are reused several times.
+
+Optimal substructure : A problem is said to have Optimal substructure if an optimal solution can be constructed from
+optimal solutions of its subproblems.
+
+
+
+
+
+
