@@ -93,6 +93,9 @@ when outer loop i = 3;
     n is number of sortings on given array elements
     k is the length of numbers array (size of array)
 
+    n - length of array
+    k - number of digits(average)
+
     Space Complexity
     O(n + k)
 
