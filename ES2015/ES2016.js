@@ -72,3 +72,43 @@ console.log(a, b)
 
 var {a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40};
 console.log(a, b);
+
+
+// ES2021 (ES 12)
+
+let str = "wow,he does not like dogs, he must be crazy";
+
+let replace = str.replace("he", "she");
+
+console.log(replace);
+
+
+let replaceAll = str.replaceAll("he", "she");
+
+console.log(replaceAll);
+
+const BILLION = 1_000_000_000;
+
+
+
+//old way
+var a, b;
+if(!a) {
+    a = b;
+}
+
+a = a || b
+
+// using logical assignment opearator
+
+// a ||= b;
+
+// The Promise.any method will accept an array of promises and will return as soon as the first one is FULFILLED.
+// However, Promise.race will return as soon as the first promise has been settled, not fulfilled .
+// This means that Promise.race might return a rejected promise, even though the second one might have succeeded.
+ 
+
+Promise.any([fetch('www.github.com'), fetch('www.idontknow.com')])
+.then(result => {
+    console.log("First promise succedded", result);
+});
