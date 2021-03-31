@@ -132,7 +132,7 @@ runAsyncFn();
 // Handling erros
 
 async function divide(x, y) {
-    if( y === 0) {
+    if( y === 0 || retry) {
         Promise.reject(new Error("You can't divide by zero"));
     }
 }
@@ -142,6 +142,14 @@ divide(1, 0)
 .catch(err => console.log(err))
 
 
+async function handleErrorPromise() {
+    try {
+        let promise = await Promise.reject(new Error("Promise Rejected"))
+    } catch(e) {
+        console.log("Promise rejected error", e);
+    }
+}
 
+handleErrorPromise();
 
 
