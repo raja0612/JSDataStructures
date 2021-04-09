@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StockBuy",
+            "request": "launch",
+            "mainClass": "StockBuy",
+            "projectName": "JSDataStructures_d8e5de3c"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BFS",
+            "request": "launch",
+            "mainClass": "BFS",
+            "projectName": "JSDataStructures_d8e5de3c"
+        }
+    ]
+}
