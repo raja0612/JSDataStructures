@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Graph",
+            "request": "launch",
+            "mainClass": "Graph",
+            "projectName": "JSDataStructures_d8e5de3c"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - StockBuy",
             "request": "launch",
             "mainClass": "StockBuy",
