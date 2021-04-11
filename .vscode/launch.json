@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BFS",
+            "request": "launch",
+            "mainClass": "Trees.BFS",
+            "projectName": "JSDataStructures_d8e5de3c"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Graph",
+            "request": "launch",
+            "mainClass": "Graphs.Graph",
+            "projectName": "JSDataStructures_d8e5de3c"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DFS",
+            "request": "launch",
+            "mainClass": "Trees.DFS",
+            "projectName": "JSDataStructures_d8e5de3c"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Graph",
             "request": "launch",
             "mainClass": "Graph",

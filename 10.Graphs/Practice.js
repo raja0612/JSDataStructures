@@ -30,29 +30,63 @@ class Graph {
     dfsRecursive(start) {
         let visited = {};
         let result  = [];
+
         const adjancencyList = this.adjancencyList;
 
-        (function dfs(v) {
+        function dfs(v) {
             if(!v) return null;
-
             visited[v] = true;
             result.push(v);
 
             adjancencyList[v].forEach( neighbor => {
                 if(!visited[neighbor]) {
-                    return dfs(neighbor)
+                    return dfs(neighbor);
                 }
             })
-        })(start)
+        }
+        dfs(start);
         return result;
     }
 
-    dfsIterative(v){
+    dfsIterative(start) {
+        let visited = {};
+        let stack = [];
+        let result = [];
 
+        stack.push(start);
+        visited[start] = true;
+
+        while(stack.length) {
+            let vertex = stack.pop();
+            result.push(vertex);
+            this.adjancencyList[vertex].forEach(neighbor => {
+                if(!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    stack.push(neighbor);
+                }
+            });
+        }
+     return result;
     }
 
-    bfs(v) {
+    bfs(start) {
+        let queue = [];
+        queue.push(start);
+        let result = [];
+        let visited = {};
+        visited[start] = true;
 
+        while(queue.length) {
+            let vertex = queue.shift();
+            result.push(vertex);
+            this.adjancencyList[vertex].forEach(neighbor => {
+                if(!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    queue.push(neighbor);
+                }
+            })
+        }
+        return result;
     }
 }
 
@@ -66,6 +100,7 @@ graph.addVertex("E");
 
 graph.addEdge("A", "B");
 graph.addEdge("B", "C");
+graph.addEdge("B", "D");
 graph.addEdge("C", "D");
 graph.addEdge("D", "E");
 graph.addEdge("E", "A");
@@ -76,6 +111,8 @@ graph.removeVertex("E")
 
 console.log(graph.adjancencyList);
 
-console.log(graph.dfsRecursive("A"));
+console.log("DFS RECURSIVE *********",graph.dfsRecursive("A"));
+console.log("DFS ITERATIVE *********",graph.dfsIterative("A"));
+console.log("BFS *********",graph.bfs("A"));
 
 

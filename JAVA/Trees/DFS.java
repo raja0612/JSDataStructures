@@ -1,5 +1,4 @@
 /*
-
        1
       / \
     2    3
@@ -29,7 +28,7 @@ Algorithm PostOrder(tree)
   2. Traverse the right sub tree i.e. call PostOrder(right subtree)
   3. Visit the root
 */
-
+package Trees;
 class Node {
     int key;
     Node left, right;
