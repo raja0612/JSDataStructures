@@ -35,9 +35,9 @@ class BinaryTree {
         root = null;
     }
 
-    Queue<Node> queue = new ArrayDeque<>();
-    List<Integer> result = new ArrayList<>();
     List<Integer> bfs(Node node) {
+        Queue<Node> queue = new ArrayDeque<>();
+        List<Integer> result = new ArrayList<>();
 
         //first add root node
         queue.offer(node);

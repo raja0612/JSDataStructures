@@ -5,6 +5,14 @@ import java.util.LinkedList;
 import java.util.*;
 import java.util.Map;
 
+/*
+
+Graph Data can be stored in two ways
+
+AdjacencyList
+AdjacencyMatrix
+*/
+
 public class Graph {
     private Map<String, List<String>> map = new HashMap<>();
     
@@ -20,8 +28,7 @@ public class Graph {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         StringBuilder builder = new StringBuilder();
   
         for (String key : map.keySet()) {
