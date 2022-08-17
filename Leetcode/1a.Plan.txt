@@ -1,0 +1,28 @@
+Phase I
+
+1. Two pointers
+2. Sliding Window
+3. Binary Search
+4. Fast & slow pointer
+
+Phase II
+
+1. Linked List
+2. Binary Trees
+3. Binary Trees
+4. N ary Trees
+
+Phase III
+1. Intervals
+2. Top k elements
+3. Heaps
+4. Two Heaps
+
+
+Phase IV
+1. BFS
+2. DFS
+3. Back Tracking 
+
+Phase V
+1. Dynamic Programming

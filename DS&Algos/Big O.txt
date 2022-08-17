@@ -1,0 +1,39 @@
+write a fucntion to calcualte the sum of all numbers from 1 up to n.
+
+function addUpto1(n) {
+    let total = 0;
+    for(let i = 1; i <= n; i++) {
+        total = total + i;
+    }
+    return total;
+}
+
+
+function addUpto2(n) {
+    return n * (n + 1) / 2;
+}
+
+so here both funtions will solve the given problem. But which one is the best.
+
+
+What does Best means?
+
+1. Faster?
+2. Less memory intensive?
+3. More readable.?
+4. Brevity.?
+
+But Speed and Memory are important when we decide which one is the best
+
+But sometime time is only fraction of seconds and it varies on machine configurations 
+But number of simple operations must be considered because those are constants in all machines.
+
+so in second functions *, +, / are 3 opeartions.
+
+
+Running time of an algorithm depends on input size(n)
+
+To analyze the performance of an algorithm , we use Big O Notation.
+
+Big O notation can give us time and space complexity.
+
