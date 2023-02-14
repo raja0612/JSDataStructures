@@ -64,6 +64,7 @@ makePromise(true)
 
 
 
+/*
 const fetch = require("node-fetch");
 
 fetch('https://api.chucknorris.io/jokes/random')
@@ -71,3 +72,46 @@ fetch('https://api.chucknorris.io/jokes/random')
   .then(data => console.log(data))
   .catch(error => console.log(error))
   .finally(() =>  console.log("retry again"))
+
+  */
+
+
+
+  //Promise.all() Promise.allSettled()
+
+  // Both takes array of promises and returns an array containing fullfilled promises.
+
+  //Promise.all will reject as soon as one of the Promises in the array rejects.
+  //Promise.allSettled will never reject, it will resolve once all Promises in the array have either rejected or resolved.
+
+
+  let promise1 = new Promise((resolve, reject) => resolve(1));
+  let promise2 = new Promise((resolve, reject) => resolve("Raj"));
+  let promise3 = new Promise((resolve, reject) => {
+    setTimeout( () => {
+         resolve("After 3 secs you will see me")
+    }, 3 * 1000)
+  });
+
+
+  let allPromises = [promise1, promise2, promise3];
+
+  Promise.all(allPromises). then(res => {
+    console.log("Each Promise res", res);
+  })
+
+  // [1, "Raj", "After 3 secs you will see me"];
+
+  let promise4 = new Promise((resolve, reject) => resolve("Resolved 4"));
+
+  let promise5 = new Promise((resolve, reject) => reject("Rejected 5"));
+
+  let promise6 = new Promise((resolve, reject) => resolve("Resolved 6"));
+
+  Promise.all([promise4, promise5, promise6])
+  .then(res => console.log(res))
+  .catch(err => console.log(err));
+
+  Promise.allSettled([promise4, promise5, promise6])
+  .then(res => console.log(res))
+  .catch(err => console.log(err));
